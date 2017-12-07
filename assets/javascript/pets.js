@@ -15,10 +15,25 @@ userRef.push({
     name: 'Brock'
 });
 var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
-var queryUrl = 'https://api.petfinder.com/pet.find?key=' + apiKey + '&count=25&location=44118&format=json';
+var queryUrl = 'http://api.petfinder.com/pet.find';
 $.ajax({
-    url:queryUrl,
-    method:'GET'
-}).done(function(response){
-    console.log(response);
+    url: queryUrl,
+    method: 'GET',
+    crossDomain: true,
+    dataType: 'jsonp',
+    data: {
+        key: apiKey,
+        count: 1,
+        location: 44118,
+        format: 'json'
+    }
+}).done(function (response) {
+    var petRef = response.petfinder.pets.pet;
+    var card = $('<div class="card teal"></div>');
+    var petCard = $('<div class="card-image"></div>');
+    petCard.append($('<img src = "' + petRef.media.photos.photo[2].$t + '" />'));
+    petCard.append($('<span class="card-title">' + petRef.name.$t + '</span>'));
+    $(card).append(petCard);
+    card.append($('<div class="card-content white-text">' + petRef.description.$t + '</div>'));
+    $('#cards').append(card);
 });
