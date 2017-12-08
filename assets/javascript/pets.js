@@ -36,15 +36,17 @@ $.ajax({
     card.append(petCard);
     card.append($());
     card.append($('<div class="card-content white-text">' + '<span class="white-text card-title">' + petRef.name.$t + '</span>' + petRef.description.$t + '</div>'));
-    card.append($('<div class="card-action"><a href="#">Link1</a><a href="#">Link2</a></div>'));
+    card.append($('<div class="card-action"><a href="#"><i class="material-icons">location_on</i>Shelter</a><a href="#"><i class="material-icons">mail</i> Email</a></div>'));
     $('#cards').append(card);
 });
 $('body').on('click','.favButton',function(){
     if(user){
         var name = $(this).parent().parent().children('.card-content').children('.card-title').text();
         var description = $(this).parent().parent().children('.card-content').text();
+        var shelterId = $(this).parent().parent().attr('data-shelterId');
+        var email = $(this).parent().parent().attr('data-email');
         $(this).children(0).text('favorite');
-        console.log(name,description);
+        console.log(name,description,shelterId);
     }
     else{
         alert('have to be logged in to save favorites');
