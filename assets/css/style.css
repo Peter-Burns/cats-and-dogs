@@ -1,0 +1,21 @@
+* {
+	font-family: "Comic Sans MS", "Comic Sans", cursive, serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.teal {
+	border-style: outset;
+    border-width: 2px;
+    border-color: black;
+}
+
+
