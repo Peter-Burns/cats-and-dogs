@@ -18,6 +18,9 @@ main {
     border-color: black;
 }
 
-a.btn-large {
-	width: 300px;
+.card-content{
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height:200px;
+
 }

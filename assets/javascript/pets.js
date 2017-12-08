@@ -15,7 +15,7 @@ userRef.push({
     name: 'Brock'
 });
 var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
-var queryUrl = 'http://api.petfinder.com/pet.find';
+var queryUrl = 'https://api.petfinder.com/pet.find';
 $.ajax({
     url: queryUrl,
     method: 'GET',
@@ -32,8 +32,23 @@ $.ajax({
     var card = $('<div class="card teal"></div>');
     var petCard = $('<div class="card-image"></div>');
     petCard.append($('<img src = "' + petRef.media.photos.photo[2].$t + '" />'));
-    petCard.append($('<span class="card-title">' + petRef.name.$t + '</span>'));
-    $(card).append(petCard);
-    card.append($('<div class="card-content white-text">' + petRef.description.$t + '</div>'));
+    petCard.append($('<a class="btn-floating btn-large halfway-fab waves-effect waves-light red favButton"><i class="material-icons">favorite_border</i></a>'));
+    card.append(petCard);
+    card.append($());
+    card.append($('<div class="card-content white-text">' + '<span class="white-text card-title">' + petRef.name.$t + '</span>' + petRef.description.$t + '</div>'));
+    card.append($('<div class="card-action"><a href="#"><i class="material-icons">location_on</i>Shelter</a><a href="#"><i class="material-icons">mail</i> Email</a></div>'));
     $('#cards').append(card);
+});
+$('body').on('click','.favButton',function(){
+    if(user){
+        var name = $(this).parent().parent().children('.card-content').children('.card-title').text();
+        var description = $(this).parent().parent().children('.card-content').text();
+        var shelterId = $(this).parent().parent().attr('data-shelterId');
+        var email = $(this).parent().parent().attr('data-email');
+        $(this).children(0).text('favorite');
+        console.log(name,description,shelterId);
+    }
+    else{
+        alert('have to be logged in to save favorites');
+    }
 });
