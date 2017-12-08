@@ -18,7 +18,6 @@ main {
     border-color: black;
 }
 
-material-icons {
-	color:red;
+a.btn-large {
+	width: 300px;
 }
-
