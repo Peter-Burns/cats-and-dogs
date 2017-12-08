@@ -15,7 +15,7 @@ userRef.push({
     name: 'Brock'
 });
 var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
-var queryUrl = 'http://api.petfinder.com/pet.find';
+var queryUrl = 'https://api.petfinder.com/pet.find';
 $.ajax({
     url: queryUrl,
     method: 'GET',
