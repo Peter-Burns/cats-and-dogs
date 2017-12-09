@@ -1,39 +1,14 @@
 * {
 	font-family: "Comic Sans MS", "Comic Sans", cursive, serif;
 }
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-main {
-    flex: 1 0 auto;
-}
-
-.teal {
-	border-style: outset;
-    border-width: 2px;
-    border-color: black;
-}
-
 .card-content{
     overflow-y:scroll;
     overflow-x:hidden;
     height:200px;
 }
-
-.dropdown-button  {
-    position: absolute;
-    right: 20px;
-    margin-top: 7px;
+select {
+    display:block;
 }
-
-/*.row {
-    text-align: center;
-    margin-left: 50%;
-    margin-right: 50%;
-    display: table-cell;
-
-}*/
+footer{
+    padding:5px;
+}
