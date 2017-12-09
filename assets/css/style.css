@@ -17,8 +17,23 @@ main {
     border-width: 2px;
     border-color: black;
 }
+
 .card-content{
     overflow-y:scroll;
     overflow-x:hidden;
     height:200px;
 }
+
+.dropdown-button  {
+    position: absolute;
+    right: 20px;
+    margin-top: 7px;
+}
+
+/*.row {
+    text-align: center;
+    margin-left: 50%;
+    margin-right: 50%;
+    display: table-cell;
+
+}*/
