@@ -44,6 +44,9 @@ $.ajax({
     card.append(petCard);
     card.append($());
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 66e7562bab00bd9a5d3a2dc7b4c4544410dadd23
     card.append($('<div class="card-content white-text">' + '<span class="white-text card-title">' + petRef.name.$t + '</span>' + petRef.description.$t + '</div>'));
     card.append($('<div class="card-action"><a href="#"><i class="material-icons">location_on</i>Shelter</a><a href="#"><i class="material-icons">mail</i> Email</a></div>'));
     $('#cards').append(card);
@@ -60,7 +63,11 @@ $('body').on('click','.favButton',function(){
     else{
         alert('have to be logged in to save favorites');
     }
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 66e7562bab00bd9a5d3a2dc7b4c4544410dadd23
     card.append($('<div class="card-content white-text">' + '<span class="white-text card-title">' + petRef.name.$t + '</span>' + '<p class="desc">' + petRef.description.$t + '</p>' + '</div>'));
     card.append($('<div class="card-action"><a class="mapLink" href="#"><i class="material-icons">location_on</i>Shelter</a><a class="emailLink" href="#"><i class="material-icons">mail</i> Email</a></div>'));
     $('#cards').append(card);
@@ -94,5 +101,8 @@ $('body').on('click','.mapLink', function (event) {
     event.preventDefault();
     var shelterId = $(this).parent().parent().attr('data-shelterId');
     console.log(shelterId);
+<<<<<<< HEAD
 >>>>>>> 9795750d2a840f5ca0386a1e7c462167c779e18d
+=======
+>>>>>>> 66e7562bab00bd9a5d3a2dc7b4c4544410dadd23
 });
