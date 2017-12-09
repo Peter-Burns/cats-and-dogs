@@ -22,7 +22,6 @@ main {
     overflow-y:scroll;
     overflow-x:hidden;
     height:200px;
-
 }
 
 .dropdown-button  {
@@ -30,4 +29,3 @@ main {
     right: 20px;
     margin-top: 7px;
 }
-
