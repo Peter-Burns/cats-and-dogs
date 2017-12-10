@@ -67,11 +67,24 @@
       <img src="assets/images/profile.jpg" alt="Unsplashed background img 1">
     </div>
   </div>
-
-  <h1 class="header center teal-text text-lighten-2">Adopt Today!</h1>
-
   <div class="row center">
-    <h5 class="header col s12 light">Find a local pet shelter</h5>
+    <div class='col s6 offset-s3'>
+      <form>
+        <div class="input-field col s4">
+          <select id='animal'>
+            <option value="">No Preference</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+          </select>
+          <label>Animal</label>
+        </div>
+        <div class="input-field col s4">
+          <select id='breed'>
+          </select>
+          <label>Breed</label>
+        </div>
+      </form>
+    </div>
   </div>
 
   <div class="row center">
@@ -110,6 +123,7 @@
   </footer>
   <script type="text/javascript" src="assets/javascript/frontend_pets.js"></script>
   <script src='assets/javascript/pets.js'></script>
+  <script src='assets/javascript/breedList.js'></script>
 </body>
 
 </html>
