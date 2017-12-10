@@ -2,6 +2,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         userRef.on('child_added', function (snap) {
             cardRef = snap.val();
+            var cardCol = $('<div class="col s4">');
             var card = $('<div class="card teal petCard"></div>');
             card.attr('data-email', cardRef.email);
             card.attr('data-shelterId', cardRef.shelterId);
@@ -12,7 +13,8 @@ firebase.auth().onAuthStateChanged(function (user) {
             card.append(petCard);
             card.append($('<div class="card-content white-text">' + '<span class="white-text card-title">' + cardRef.name + '</span>' + '<p class="desc">' + cardRef.description + '</p>' + '</div>'));
             card.append($('<div class="card-action"><a class="mapLink modal-trigger" href="#modal1"><i class="material-icons">location_on</i>Shelter</a><a class="emailLink" href="mailto:' + cardRef.email + '"><i class="material-icons">mail</i> Email</a></div>'));
-            $('#cards').append(card);
+            cardCol.append(card);
+            $('#cards').append(cardCol);
         });
     }
     else {
