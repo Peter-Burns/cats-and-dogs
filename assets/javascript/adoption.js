@@ -22,11 +22,11 @@ $('#submit').on('click', function (event) {
         }
     }).done(function (response) {
         var petRef = response.petfinder.pets.pet;
-        var card = $('<div class="card teal"></div>');
+        var card = $('<div class="card teal petCard"></div>');
         card.attr('data-email', petRef.contact.email.$t);
         card.attr('data-shelterId', petRef.shelterId.$t);
         var petCard = $('<div class="card-image"></div>');
-        petCard.append($('<img src = "' + petRef.media.photos.photo[2].$t + '" />'));
+        petCard.append($('<img src = "' + petRef.media.photos.photo[2].$t + '" width=100% />'));
         petCard.append($('<a class="btn-floating btn-large halfway-fab waves-effect waves-light red favButton"><i class="material-icons">favorite_border</i></a>'));
         card.append(petCard);
         card.append($());
