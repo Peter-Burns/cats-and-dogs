@@ -1,6 +1,3 @@
-$(document).ready(function () {
-    $('.modal').modal();
-});
 $('body').on('click', '.mapLink', function (event) {
     var shelterId = $(this).parent().parent().attr('data-shelterId');
     var queryURL = 'https://api.petfinder.com/shelter.get';
