@@ -15,12 +15,19 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         localUser = user.displayName;
         userRef = database.ref('users/' + localUser);
+        $('#logout').show();
+        $('.userLink').text(localUser);
+        $('#login').hide();
     }
     else {
         localUser = null;
+        $('#logout').hide();
+        $('.userLink').text('User');
+        $('#login').show();
     }
 });
-$('#login').on('click', function () {
+$('#login').on('click', function (event) {
+    event.preventDefault();
     firebase.auth().signInWithPopup(provider).then(function (result) {
     }).catch(function (error) {
         console.log(error);

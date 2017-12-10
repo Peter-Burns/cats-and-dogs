@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User page</title>
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel='stylesheet' href='assets/css/style.css'>
+</head>
+
+<body>
+    <nav class="teal" role="navigation">
+        <div class="nav-wrapper container">
+            <a id='login' href='#' class='left'>Login</a>
+            <a id='logout' href='#' class='left' hidden='true'>Logout</a>
+            <a id="logo-container" href="./index.html" class="brand-logo center">Cats + Dogs</a>
+            <ul class='right hide-on-med-and-down'>
+                <li>
+                    <a href='userprofile.html' class='userLink'>User</a>
+                </li>
+                <li>
+                    <a href='adopt.html'>Adoption</a>
+                </li>
+                <li>
+                    <a href='info.html'>Info and Videos</a>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <a href='userprofile.html' class='userLink'>User</a>
+                </li>
+                <li>
+                    <a href='adopt.html'>Adopt</a>
+                </li>
+                <li>
+                    <a href="info.html">Videos and Information</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse right">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+
+    <div id="index-banner" class="parallax-container">
+        <div class="parallax">
+            <img src="assets/images/dog.png" alt="Unsplashed background img 1">
+        </div>
+    </div>
+
+    <div class="row center">
+        <h1 class="header teal-text text-lighten-2">Your Favorites</h1>
+    </div>
+
+    <div class="row center" id='cards'>
+    </div>
+
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="assets/images/cat.png" alt="Unsplashed background img 2">
+        </div>
+    </div>
+
+    <footer class="page-footer teal">
+        <div class="row center">
+            <div class="col s12">
+                <h5 class="white-text">Cats and Dogs &copy; 2017</h5>
+                <p class="grey-text text-lighten-4">Powered by Petfinder</p>
+                <a class="grey-text text-lighten-4" href="https://www.petfinder.com/">www.petfinder.com</a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="assets/javascript/frontend_pets.js"></script>
+    <script src='assets/javascript/pets.js'></script>
+    <script src='assets/javascript/adoption.js'></script>
+</body>
+
+</html>
