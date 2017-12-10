@@ -9,18 +9,19 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 var localUser = null;
-var userRef;
+var userRef = null;
 var provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         localUser = user.displayName;
-        userRef = database.ref('users/' + localUser);
+        userRef = database.ref('users/' + user.email);
         $('#logout').show();
         $('.userLink').text(localUser);
         $('#login').hide();
     }
     else {
         localUser = null;
+        userRef = null;
         $('#logout').hide();
         $('.userLink').text('User');
         $('#login').show();
