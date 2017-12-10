@@ -14,7 +14,7 @@ var provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         localUser = user.displayName;
-        userRef = database.ref('users/' + user.email);
+        userRef = database.ref('users/' + user.uid);
         $('#logout').show();
         $('.userLink').text(localUser);
         $('#login').hide();
