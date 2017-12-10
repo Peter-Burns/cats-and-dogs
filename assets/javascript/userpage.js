@@ -18,6 +18,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
     }
     else {
+        userRef.off();
         $('#cards').empty();
+        $('#cards').append('<h3>Must be logged in to see favorites!</h3>');
     }
 });
