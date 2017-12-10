@@ -18,46 +18,36 @@
 <body>
   <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <a id='login' href='#' class='left'>Login</a>
+      <a id='logout' href='#' class='left' hidden='true'>Logout</a>
+      <a id="logo-container" href="./index.html" class="brand-logo center">Cats + Dogs</a>
       <ul class='right hide-on-med-and-down'>
         <li>
-          <a href='./userprofile.html'>User</a>
+          <a href='userprofile.html' class='userLink'>User</a>
+        </li>
+        <li class='active'>
+          <a href='adopt.html'>Adoption</a>
         </li>
         <li>
-          <a href='./adopt.html'>Adoption</a>
+          <a href='info.html'>Info and Videos</a>
         </li>
-        <li>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Info and Videos</a>
-        </li>
-      </ul>
-      <ul id='dropdown1' class='dropdown-content'>
-        <li>
-          <a href="./cats.html">Cats</a>
-        </li>
-        <li>
-          <a href="./dogs.html">Dogs</a>
-        </li>
-        <li class="divider"></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li>
-          <a href='./userprofile.html'>User</a>
+          <a href='index.html'>Home</a>
         </li>
         <li>
+          <a href='userprofile.html' class='userLink'>User</a>
+        </li>
+        <li class='active'>
           <a href='adopt.html'>Adopt</a>
         </li>
         <li>
-          <a class='subheader' href="#!">Videos and Information</a>
-        </li>
-        <li>
-          <a href="#!">Cats</a>
-        </li>
-        <li>
-          <a href="#!">Dogs</a>
+          <a href="info.html">Videos and Information</a>
         </li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse">
+      <a href="#" data-activates="nav-mobile" class="button-collapse right">
         <i class="material-icons">menu</i>
       </a>
     </div>
@@ -139,7 +129,7 @@
 
   <div id="modal1" class="modal">
     <div class="modal-content" id='mapModal'>
-      
+
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Close</a>
