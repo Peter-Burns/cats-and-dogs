@@ -7,7 +7,6 @@ $('body').on('click', '.favButton', function () {
             var email = $(this).parent().parent().attr('data-email');
             var imgSrc = $(this).parent().children('img').attr('src');
             $(this).children(0).text('favorite');
-            console.log(name, description, shelterId, email);
             var key = userRef.push({
                 imgSrc: imgSrc,
                 name: name,
