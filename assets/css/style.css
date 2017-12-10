@@ -9,6 +9,7 @@ h1,h2,h4,a {
 footer{
     padding:5px;
 }
-.petPic{
-    height:300px;
+.petCard{
+    height: 800px;
+    overflow:auto;
 }

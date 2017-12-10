@@ -12,7 +12,7 @@ $('#search').on('click', function (event) {
     var params = {
         key:apiKey,
         format:'json',
-        count:15
+        count:24
     };
     if(breed)params.breed = breed;
     if(age)params.age =age;

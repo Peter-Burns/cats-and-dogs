@@ -1,5 +1,5 @@
 function petCardBuilder(petRef) {
-    var cardCol = $('<div class="col s4">');
+    var cardCol = $('<div class="col l4 m6">');
     var card = $('<div class="card teal petCard"></div>');
     card.attr('data-email', petRef.email);
     card.attr('data-shelterId', petRef.shelterId);

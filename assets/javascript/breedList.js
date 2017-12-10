@@ -16,7 +16,7 @@ $('#animal').on('change', function () {
         }).done(function (response) {
             var breeds = response.petfinder.breeds.breed;
             $('#breed').empty();
-            $('#breed').append('<option value="">No Preference</option>');
+            $('#breed').append('<option value="">No Pref</option>');
             for (var i = 0; i < breeds.length; i++) {
                 $('#breed').append($('<option>' + breeds[i].$t + '</option>'));
             }
