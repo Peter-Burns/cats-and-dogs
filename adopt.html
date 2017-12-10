@@ -11,6 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel='stylesheet' href='assets/css/style.css'>
 </head>
 
@@ -67,10 +68,12 @@
       <img src="assets/images/profile.jpg" alt="Unsplashed background img 1">
     </div>
   </div>
+
   <div class="row center">
     <div class='col s6 offset-s3'>
+      <h3>Search for an adoptable animal!</h3>
       <form>
-        <div class="input-field col s4">
+        <div class="input-field col l4 s6">
           <select id='animal'>
             <option value="">No Preference</option>
             <option value="cat">Cat</option>
@@ -78,30 +81,53 @@
           </select>
           <label>Animal</label>
         </div>
-        <div class="input-field col s4">
+        <div class="input-field col l4 s6">
           <select id='breed'>
           </select>
           <label>Breed</label>
         </div>
+        <div class="input-field col l4 s6">
+          <select id='sex'>
+            <option value="">No Preference</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+          </select>
+          <label>Gender</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id='age'>
+            <option value="">No Preference</option>
+            <option value="Baby">Baby</option>
+            <option value="Young">Young</option>
+            <option value="Adult">Adult</option>
+            <option value="Senior">Senior</option>
+          </select>
+          <label>Age</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id='size'>
+            <option value="">No Preference</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+          </select>
+          <label>Size</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <input id="zipcode" type="number" data-length="5">
+          <label for="zipcode">Zipcode</label>
+        </div>
       </form>
+      <button id='search' class='btn'>
+        <i class='material-icons'>search</i>
+      </button>
     </div>
   </div>
 
-  <div class="row center">
-    <button class="btn waves-effect waves-light" type="submit" name="action" href="#!">Click Here
-    </button>
-    <button class='btn waves-effect waves-light red' id='login'>Login</button>
-  </div>
+  <div class='row center'>
+    <div id='cards'>
 
-  <div class="row container">
-    <div class="col s12 m4">
-      <div id='cards'>
-
-      </div>
-    </div>
-    <div class="col s12 m4">
-    </div>
-    <div class="col s12 m4">
     </div>
   </div>
 
@@ -124,6 +150,8 @@
   <script type="text/javascript" src="assets/javascript/frontend_pets.js"></script>
   <script src='assets/javascript/pets.js'></script>
   <script src='assets/javascript/breedList.js'></script>
+  <script src='assets/javascript/petCard.js'></script>
+  <script src='assets/javascript/adoption.js'></script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
 firebase.auth().onAuthStateChanged(function (user) {
+    $('#cards').empty();
     if (user) {
         userRef.on('child_added', function (snap) {
-            cardRef = snap.val();
+            var cardRef = snap.val();
+            console.log(cardRef);
             var cardCol = $('<div class="col s4">');
             var card = $('<div class="card teal petCard"></div>');
             card.attr('data-email', cardRef.email);
@@ -18,7 +20,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
     }
     else {
-        $('#cards').empty();
         $('#cards').append('<h3>Must be logged in to see favorites!</h3>');
     }
 });
