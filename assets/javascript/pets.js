@@ -33,3 +33,7 @@ $('#login').on('click', function (event) {
         console.log(error);
     });
 });
+$('#logout').on('click', function (event) {
+    event.preventDefault();
+    firebase.auth().signOut();
+});
