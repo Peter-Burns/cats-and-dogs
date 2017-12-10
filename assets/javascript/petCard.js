@@ -9,7 +9,7 @@ function petCardBuilder(petRef) {
         icon = 'favorite';
     }
     var petCard = $('<div class="card-image"></div>');
-    petCard.append($('<img src = "' + petRef.imgSrc + '" />'));
+    petCard.append($('<img class = "petPic" src = "' + petRef.imgSrc + '" />'));
     petCard.append($('<a class="btn-floating btn-large halfway-fab waves-effect waves-light red favButton"><i class="material-icons">' + icon + '</i></a>'));
     card.append(petCard);
     card.append($('<div class="card-content left-align white-text">' + '<span class="white-text card-title">' + petRef.name + '</span>' + '<p class="desc">' + petRef.description + '</p>' + '</div>'));
