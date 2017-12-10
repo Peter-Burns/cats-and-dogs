@@ -1,12 +1,13 @@
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+        localRef = userRef;
         userRef.on('child_added', function (snap) {
             cardRef = snap.val();
             var cardCol = $('<div class="col s4">');
             var card = $('<div class="card teal petCard"></div>');
             card.attr('data-email', cardRef.email);
             card.attr('data-shelterId', cardRef.shelterId);
-            card.attr('data-key',snap.key);
+            card.attr('data-key', snap.key);
             var petCard = $('<div class="card-image"></div>');
             petCard.append($('<img src = "' + cardRef.imgSrc + '" />'));
             petCard.append($('<a class="btn-floating btn-large halfway-fab waves-effect waves-light red favButton"><i class="material-icons">favorite</i></a>'));
@@ -18,7 +19,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
     }
     else {
-        userRef.off();
         $('#cards').empty();
         $('#cards').append('<h3>Must be logged in to see favorites!</h3>');
     }
