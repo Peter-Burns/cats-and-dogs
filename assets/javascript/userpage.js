@@ -1,6 +1,5 @@
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        localRef = userRef;
         userRef.on('child_added', function (snap) {
             cardRef = snap.val();
             var cardCol = $('<div class="col s4">');
