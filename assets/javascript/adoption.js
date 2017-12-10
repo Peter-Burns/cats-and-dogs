@@ -1,5 +1,5 @@
 $('#search').on('click', function (event) {
-    console.log(1);
+    $('#cards').empty();
     event.preventDefault();
     var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
     var queryUrl = 'https://api.petfinder.com/pet.find';
