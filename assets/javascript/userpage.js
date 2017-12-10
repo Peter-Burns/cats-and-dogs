@@ -2,9 +2,10 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         userRef.on('child_added', function (snap) {
             cardRef = snap.val();
-            var card = $('<div class="card teal"></div>');
+            var card = $('<div class="card teal petCard"></div>');
             card.attr('data-email', cardRef.email);
             card.attr('data-shelterId', cardRef.shelterId);
+            card.attr('data-key',snap.key);
             var petCard = $('<div class="card-image"></div>');
             petCard.append($('<img src = "' + cardRef.imgSrc + '" />'));
             petCard.append($('<a class="btn-floating btn-large halfway-fab waves-effect waves-light red favButton"><i class="material-icons">favorite</i></a>'));
