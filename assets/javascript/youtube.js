@@ -23,7 +23,7 @@ $('#search').on('click', function (event) {
         }).done(function (response) {
             var videos = response.items;
             for (var i = 0; i < videos.length; i++) {
-                $('#youtubeSection').append('<div class="col l6"><iframe width="480" height="360" src="https://www.youtube.com/embed/' + videos[i].id.videoId + '"</iframe></div>');
+                $('#youtubeSection').append('<div class="col l6 s12"><div class="video-container"><iframe allowfullscreen width="480" height="360" src="https://www.youtube.com/embed/' + videos[i].id.videoId + '"</iframe></div></div>');
             }
         });
     }
