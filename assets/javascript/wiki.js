@@ -1,8 +1,12 @@
 $('#search').on('click', function (event) {
     event.preventDefault();
     var breed = $('#breed').val();
+    var animal = $('#animal').val();
     if (breed) {
-        var wikiUrl = 'https://en.wikipedia.org/w/api.php?&callback=?';
+        if(!breed.includes('cat')&&!breed.includes('Dog')){
+            breed = breed + ' ' + animal;
+        }
+        var wikiUrl = 'https://en.wikipedia.org/w/api.php?&callback=?&redirects';
         $('#wikiSection').empty();
         $.ajax({
             url: wikiUrl,
