@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Page</title>
+    <title>Info and Videos</title>
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -22,28 +22,28 @@
             <a id='logout' href='#' class='left' hidden='true'>Logout</a>
             <a id="logo-container" href="./index.html" class="brand-logo center">Cats + Dogs</a>
             <ul class='right hide-on-med-and-down'>
-                <li class='active'>
+                <li>
                     <a href='userprofile.html' class='userLink'>User</a>
                 </li>
                 <li>
                     <a href='adopt.html'>Adoption</a>
                 </li>
-                <li>
+                <li class='active'>
                     <a href='info.html'>Info and Videos</a>
                 </li>
             </ul>
 
             <ul id="nav-mobile" class="side-nav">
-                <li>
+                <li class='active'>
                     <a href='index.html'>Home</a>
                 </li>
-                <li class='active'>
+                <li>
                     <a href='userprofile.html' class='userLink'>User</a>
                 </li>
                 <li>
                     <a href='adopt.html'>Adopt</a>
                 </li>
-                <li>
+                <li class='active'>
                     <a href="info.html">Videos and Information</a>
                 </li>
             </ul>
@@ -55,47 +55,70 @@
 
     <div id="index-banner" class="parallax-container">
         <div class="parallax">
-            <img src="assets/images/dog.png" alt="Unsplashed background img 1">
+            <img src="assets/images/dog_group.jpg" alt="Unsplashed background img 1">
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col s6 offset-s3 center'>
+            <h1 class="header teal-text text-lighten-2">Breed Info and Videos!</h1>
+            <form>
+                <div class="input-field col s6">
+                    <select id='animal'>
+                        <option value=""></option>
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                    </select>
+                    <label>Animal</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id='breed'>
+                    </select>
+                    <label>Breed</label>
+                </div>
+            </form>
+            <div class='left'>
+                <button id='search' class='btn'>
+                    <i class='material-icons'>search</i>
+                </button>
+            </div>
         </div>
     </div>
 
-    <div class="row center">
-        <h1 class="header teal-text text-lighten-2">Your Favorites</h1>
+    <div class='row'>
+        <div class='col l8 offset-l2 s12 center' id='youtubeSection'>
+
+        </div>
     </div>
 
-    <div class="row center" id='cards'>
+    <div class='row'>
+        <div class='col l6 offset-l3 s12 left'>
+            <div id='wikiSection'>
+
+            </div>
+        </div>
     </div>
 
     <div class="parallax-container">
         <div class="parallax">
-            <img src="assets/images/cat.png" alt="Unsplashed background img 2">
+            <img src="assets/images/dog2.jpg" alt="Unsplashed background img 2">
         </div>
     </div>
 
-    <div id="modal1" class="modal">
-        <div class="modal-content" id='mapModal'>
-
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Close</a>
-        </div>
-    </div>
 
     <footer class="page-footer teal">
         <div class="row center">
             <div class="col s12">
                 <h5 class="white-text">Cats and Dogs &copy; 2017</h5>
-                <p class="grey-text text-lighten-4">Powered by Petfinder</p>
+                <p class="grey-text text-lighten-4">"Powered by Petfinder"</p>
                 <a class="grey-text text-lighten-4" href="https://www.petfinder.com/">www.petfinder.com</a>
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="assets/javascript/frontend_pets.js"></script>
     <script src='assets/javascript/login.js'></script>
-    <script src='assets/javascript/petCard.js'></script>
-    <script src='assets/javascript/userpage.js'></script>
-    <script src='assets/javascript/favorite.js'></script>
-    <script src='assets/javascript/maps.js'></script>
+    <script src='assets/javascript/breedList.js'></script>
+    <script type="text/javascript" src="assets/javascript/frontend_pets.js"></script>
+    <script src='assets/javascript/wiki.js'></script>
+    <script src='assets/javascript/youtube.js'></script>
 </body>
 
 </html>
