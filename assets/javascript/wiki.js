@@ -3,9 +3,10 @@ $('#search').on('click', function (event) {
     var breed = $('#breed').val();
     var animal = $('#animal').val();
     if (breed) {
-        if(!breed.includes('cat')&&!breed.includes('Dog')){
+        if(!breed.includes('Cat')&&!breed.includes('Dog')&&!breed.includes('Hound')&&!breed.includes('hound')&&!breed.includes('dog')&&!breed.includes('Terrier')&&!breed.includes('Spaniel')&&!breed.includes('Shepherd')&&!breed.includes('Kelpie')&&!breed.includes('Collie')&&!breed.includes('Retriever')&&!breed.includes('Labrador')&&!breed.includes('Mastiff')&&!breed.includes('Ovtcharka')&&!breed.includes('Schnauzer')&&!breed.includes('Schipperke')&&!breed.includes('Inu')&&!breed.includes('Tzu')&&!breed.includes('Husky')&&!breed.includes('Beauceron')&&!breed.includes('Affenpinscher')){
             breed = breed + ' ' + animal;
         }
+        console.log(breed);
         var wikiUrl = 'https://en.wikipedia.org/w/api.php?&callback=?&redirects';
         $('#wikiSection').empty();
         $.ajax({
