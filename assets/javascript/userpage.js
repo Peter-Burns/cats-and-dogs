@@ -4,7 +4,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         userRef.on('child_added', function (snap) {
             var cardBuilder = snap.val();
             cardBuilder.key = snap.key;
-            if (!$('[data-key="-L02qbk1EcRzXru7CZlx"]')) {
+            if (!$('[data-key="'+ cardBuilder.key + '"]')) {
                 var cardCol = petCardBuilder(cardBuilder);
                 $('#cards').append(cardCol);
             }
