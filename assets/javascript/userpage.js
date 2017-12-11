@@ -9,7 +9,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
         userRef.on('child_removed', function (snap) {
             var key = snap.key;
-            $('[data-key="'+ key + '"]').remove();
+            $('[data-key="'+ key + '"]').parent().remove();
         });
     }
     else {
