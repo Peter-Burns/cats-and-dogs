@@ -4,11 +4,12 @@ firebase.auth().onAuthStateChanged(function (user) {
         userRef.on('child_added', function (snap) {
             var cardBuilder = snap.val();
             cardBuilder.key = snap.key;
-            console.log($('[data-key="'+ cardBuilder.key + '"]').length);
-            if ($('[data-key="'+ cardBuilder.key + '"]').length===0) {
-                var cardCol = petCardBuilder(cardBuilder);
-                $('#cards').append(cardCol);
-            }
+            var cardCol = petCardBuilder(cardBuilder);
+            $('#cards').append(cardCol);
+        });
+        userRef.on('child_removed', function (snap) {
+            var key = snap.key;
+            $('[data-key="'+ key + '"]').remove();
         });
     }
     else {
