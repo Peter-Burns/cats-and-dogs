@@ -1,6 +1,7 @@
 $('#search').on('click', function (event) {
     event.preventDefault();
-    if ($('#zipcode').val().match('/\b\d\d\d\d\d\b/g')) {
+    var regex = /\b\d\d\d\d\d\b/gi;
+    if ($('#zipcode').val().match(regex)) {
         $('#cards').empty();
         var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
         var queryUrl = 'https://api.petfinder.com/pet.find';
