@@ -1,8 +1,28 @@
-$.ajax({
-    get the list
-}).done(list){
-    var dropdownList = $('#breedList');
-    for(var i = 0;i<list.length;i++){
-        dropdownList.append($('<li>' + list[i].$t + '</li>'));
-    }
-}
+$('#search').on('click', function (event) {
+    event.preventDefault();
+    var breed = $('#breed').val();
+    var animal = $('#animal').val();
+    var youtubeUrl = 'https://www.googleapis.com/youtube/v3/search';
+    $('#youtubeSection').empty();
+    $('#youtubeSection').append($('<h1><span>' + breed + '</span></h1>'));
+    $.ajax({
+        url:youtubeUrl,
+        method:'GET',
+        dataType: 'json',
+        data: {
+            key:'AIzaSyAhcfF1-dZJMw6lxGpP0igDZ-RkdlRNHdo',
+            videoEmbeddable:true,
+            type:'video',
+            safeSearch:'strict',
+            q:breed,
+            order:'viewCount',
+            maxResults:'6',
+            part:'snippet'
+        }
+    }).done(function(response){
+        var videos = response.items;
+        for(var i=0;i<videos.length;i++){
+            $('#youtubeSection').append('<div class="col l6"><iframe width="480" height="360" src="https://www.youtube.com/embed/'+videos[i].id.videoId + '"</iframe></div>');
+        }
+    });
+});
