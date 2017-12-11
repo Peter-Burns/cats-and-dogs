@@ -17,8 +17,8 @@ $('body').on('click', '.mapLink', function (event) {
         var longitude = response.petfinder.shelter.longitude.$t;
         var shelterName = response.petfinder.shelter.name.$t;
         $('#mapModal').empty();
-        var iframe = $('<iframe width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>');
-        iframe.attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBE9zfgNK24i9DFGAdb1t1AhDQ0WIwhIdk&q=' + latitude + ',' + longitude);
+        var iframe = $('<div class="video-container"><iframe width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>');
+        iframe.children('iframe').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBE9zfgNK24i9DFGAdb1t1AhDQ0WIwhIdk&q=' + latitude + ',' + longitude);
         $('#mapModal').append('<h5>' + shelterName + '</h5>');
         $('#mapModal').append(iframe);
     });
