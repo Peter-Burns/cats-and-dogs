@@ -4,6 +4,7 @@ function petCardBuilder(petRef) {
     card.attr('data-email', petRef.email);
     card.attr('data-shelterId', petRef.shelterId);
     card.attr('data-id', petRef.id);
+    card.attr('data-animal', petRef.animal);
     var icon = 'favorite_border';
     if(petRef.key){
         card.attr('data-key', petRef.key);
