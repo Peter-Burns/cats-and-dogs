@@ -15,11 +15,29 @@
 </head>
 
 <body>
-  <nav class="teal" role="navigation">
+   <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Logo</a>
-     <a class='dropdown-button btn  hide-on-med-and-down' href='#' data-activates='dropdown1'>Info and Videos</a>
-
+      <ul class='right hide-on-med-and-down'>
+        <li>
+          <a href='./userprofile.html'>User</a>
+        </li>
+        <li>
+          <a href='./adopt.html'>Adoption</a>
+        </li>
+        <li>
+          <a class='dropdown-button' href='#' data-activates='dropdown1'>Info and Videos</a>
+        </li>
+      </ul>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li>
+          <a href="./cats.html">Cats</a>
+        </li>
+        <li>
+          <a href="./dogs.html">Dogs</a>
+        </li>
+        <li class="divider"></li>
+      </ul>
   
   <ul id='dropdown1' class='dropdown-content'>
     <li><a href="index.html">Home Page</a></li>
@@ -28,11 +46,23 @@
     <li class="divider"></li>
   </ul>
         
+
       <ul id="nav-mobile" class="side-nav">
-      <li><a class='subheader' href="#!">Videos and Information</a></li>
-      <li><a href="cats.html">Cats</a></li>
-      <li><a href="dogs.html">Dogs</a></li>
-        
+        <li>
+          <a href='./userprofile.html'>User</a>
+        </li>
+        <li>
+          <a href='adopt.html'>Adopt</a>
+        </li>
+        <li>
+          <a class='subheader' href="#!">Videos and Information</a>
+        </li>
+        <li>
+          <a href="#!">Cats</a>
+        </li>
+        <li>
+          <a href="#!">Dogs</a>
+        </li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse">
         <i class="material-icons">menu</i>

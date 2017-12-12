@@ -5,36 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Adopt</title>
   <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel='stylesheet' href='assets/css/style.css'>
 </head>
+
 <body>
   <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-     <a class='dropdown-button btn  hide-on-med-and-down' href='#' data-activates='dropdown1'>Info and Videos</a>
-
-  
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Cats</a></li>
-    <li><a href="#!">Dogs</a></li>
-    <li><a href="#!">Adopt</a></li>
-    <li><a href="#!">Profile</a></li>
-    <li class="divider"></li>
-  </ul>
-        
-      <ul id="nav-mobile" class="side-nav">
-      <li><a class='subheader' href="#!">Videos and Information</a></li>
-      <li><a href="#!">Cats</a></li>
-      <li><a href="#!">Dogs</a></li>
-        
+      <a id='login' href='#' class='left'>Login</a>
+      <a id='logout' href='#' class='left' hidden='true'>Logout</a>
+      <a id="logo-container" href="./index.html" class="brand-logo center">Cats + Dogs</a>
+      <ul class='right hide-on-med-and-down'>
+        <li>
+          <a href='userprofile.html' class='userLink'>User</a>
+        </li>
+        <li class='active'>
+          <a href='adopt.html'>Adoption</a>
+        </li>
+        <li>
+          <a href='info.html'>Info and Videos</a>
+        </li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse">
+
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <a href='index.html'>Home</a>
+        </li>
+        <li>
+          <a href='userprofile.html' class='userLink'>User</a>
+        </li>
+        <li class='active'>
+          <a href='adopt.html'>Adopt</a>
+        </li>
+        <li>
+          <a href="info.html">Videos and Information</a>
+        </li>
+        <li>
+          <a href="cats.html">Cats</a>
+        </li>
+        <li>
+          <a href="dogs.html">Dogs</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse right">
         <i class="material-icons">menu</i>
       </a>
     </div>
@@ -46,47 +65,105 @@
     </div>
   </div>
 
-  <h1 class="header center teal-text text-lighten-2">Adopt Today!</h1>
-
   <div class="row center">
-    <h5 class="header col s12 light">Find a local pet shelter</h5>
+    <div class='col s6 offset-s3'>
+      <h3>Search for an adoptable animal!</h3>
+      <form>
+        <div class="input-field col l4 s6">
+          <select id='animal'>
+            <option value="">No Pref</option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+          </select>
+          <label>Animal</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id='breed'>
+          </select>
+          <label>Breed</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id='sex'>
+            <option value="">No Pref</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+          </select>
+          <label>Gender</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id='age'>
+            <option value="">No Pref</option>
+            <option value="Baby">Baby</option>
+            <option value="Young">Young</option>
+            <option value="Adult">Adult</option>
+            <option value="Senior">Senior</option>
+          </select>
+          <label>Age</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <select id='size'>
+            <option value="">No Pref</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">Extra Large</option>
+          </select>
+          <label>Size</label>
+        </div>
+        <div class="input-field col l4 s6">
+          <input id="zipcode" value="44118" type="number" data-length="5">
+          <label for="zipcode">Zipcode</label>
+        </div>
+      </form>
+      <div class='col l4 s6 right'>
+        <button id='search' class='btn'>
+          <i class='material-icons'>search</i>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <div class="row center">
-  <button class="btn waves-effect waves-light" type="submit" name="action" href="#!">Click Here
-  </button>
-  <button class='btn waves-effect waves-light red' id='login'>Login</button>
-  </div>
-
-  <div class="row container">
-    <div class="col s12 m4">
+  <div class='container'>
+    <div class='row center'>
       <div id='cards'>
 
       </div>
-    </div>
-    <div class="col s12 m4">
-    </div>
-    <div class="col s12 m4">
     </div>
   </div>
 
   <div class="parallax-container">
     <div class="parallax">
-      <img src="assets/images/adopt.jpg" alt="Unsplashed background img 2">
+      <img src="assets/images/Adopt.jpg" alt="Unsplashed background img 2">
     </div>
   </div>
 
+  <div id="modal1" class="modal">
+    <div class="modal-content" id='mapModal'>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Close</a>
+    </div>
+  </div>
 
   <footer class="page-footer teal">
     <div class="row center">
       <div class="col s12">
         <h5 class="white-text">Cats and Dogs &copy; 2017</h5>
-        <p class="grey-text text-lighten-4">"Powered by Petfinder"</p><a class="grey-text text-lighten-4" href="https://www.petfinder.com/">www.petfinder.com</a>
+        <p class="grey-text text-lighten-4">Powered by Petfinder</p>
+        <a class="grey-text text-lighten-4" href="https://www.petfinder.com/">www.petfinder.com</a>
       </div>
     </div>
   </footer>
+
   <script type="text/javascript" src="assets/javascript/frontend_pets.js"></script>
-  <script src='assets/javascript/pets.js'></script>
+  <script src='assets/javascript/login.js'></script>
+  <script src='assets/javascript/breedList.js'></script>
+  <script src='assets/javascript/petCard.js'></script>
+  <script src='assets/javascript/adoption.js'></script>
+  <script src='assets/javascript/maps.js'></script>
+  <script src='assets/javascript/favorite.js'></script>
+  <script src='assets/javascript/petLink.js'></script>
 </body>
 
 </html>
