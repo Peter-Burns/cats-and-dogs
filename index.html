@@ -16,65 +16,44 @@
 </head>
 
 <body>
-  <nav class="teal" role="navigation">
-    <div class="nav-wrapper container">
-      <a id='login' href='#' class='left'>Login</a>
-      <a id='logout' href='#' class='left' hidden='true'>Logout</a>
-      <a id="logo-container" href="./index.html" class="brand-logo center">Cats + Dogs</a>
-      <ul class='right hide-on-med-and-down'>
-        <li>
-          <a href='userprofile.html' class='userLink'>User</a>
-        </li>
-        <li>
-          <a href='adopt.html'>Adoption</a>
-        </li>
-        <li>
-          <a href='info.html'>Info and Videos</a>
-        </li>
-        <li>
-          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Info and Videos!</a>
-        </li>
-      </ul>
+    <nav class="teal" role="navigation">
+        <div class="nav-wrapper container">
+            <a id='login' href='#' class='left'>Login</a>
+            <a id='logout' href='#' class='left' hidden='true'>Logout</a>
+            <a id="logo-container" href="./index.html" class="brand-logo center">Cats + Dogs</a>
+            <ul class='right hide-on-med-and-down'>
+                <li>
+                    <a href='userprofile.html' class='userLink'>User</a>
+                </li>
+                <li>
+                    <a href='adopt.html'>Adoption</a>
+                </li>
+                <li class='active'>
+                    <a href='info.html'>Info and Videos</a>
+                </li>
+            </ul>
 
-      <ul id='dropdown1' class='right dropdown-content'>
-        <li>
-          <a href="cats.html">Cats</a>
-        </li>
-        <li>
-          <a href="dogs.html">Dogs</a>
-        </li>
-      </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li class='active'>
+                    <a href='index.html'>Home</a>
+                </li>
+                <li>
+                    <a href='userprofile.html' class='userLink'>User</a>
+                </li>
+                <li>
+                    <a href='adopt.html'>Adopt</a>
+                </li>
+                <li class='active'>
+                    <a href="info.html">Videos and Information</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse right">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li class='active'>
-          <a href='index.html'>Home</a>
-        </li>
-        <li>
-          <a href='userprofile.html' class='userLink'>User</a>
-        </li>
-        <li>
-          <a href='adopt.html'>Adopt</a>
-        </li>
-        <li>
-          <a href="info.html">Videos and Information</a>
-        </li>
-        <li>
-          <a class='subheader' href="#!">Videos and Information</a>
-        </li>
-        <li>
-          <a href="cats.html">Cats</a>
-        </li>
-        <li>
-          <a href="dogs.html">Dogs</a>
-        </li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse right">
-        <i class="material-icons">menu</i>
-      </a>
-    </div>
-  </nav>
-
-  <div id="index-banner" class="parallax-container">
+ <div id="index-banner" class="parallax-container">
     <div class="parallax">
       <img src="assets/images/dog.png" alt="Unsplashed background img 1">
     </div>
