@@ -5,6 +5,7 @@ $('body').on('click', '.favButton', function () {
             var name = $(this).parent().parent().children('.card-content').children('.card-title').text();
             var description = $(this).parent().parent().children('.card-content').children('.desc').text();
             var shelterId = $(this).parent().parent().attr('data-shelterId');
+            var id = $(this).parent().parent().attr('data-id');
             var email = $(this).parent().parent().attr('data-email');
             var imgSrc = $(this).parent().children('img').attr('src');
             Materialize.toast(name + ' added to favorites!', 3000);
@@ -14,6 +15,7 @@ $('body').on('click', '.favButton', function () {
                 description: description,
                 shelterId: shelterId,
                 email: email,
+                id:id
             }); 
             key = key.toString().split('/').pop();
             $(this).parent().parent().attr('data-key',key);

@@ -37,7 +37,8 @@ $('#search').on('click', function (event) {
                         email: petRef[i].contact.email.$t,
                         shelterId: petRef[i].shelterId.$t,
                         imgSrc: petRef[i].media.photos.photo[2].$t,
-                        description: petRef[i].description.$t
+                        description: petRef[i].description.$t,
+                        id:petRef[i].id.$t
                     };
                     var cardCol = petCardBuilder(cardBuilder);
                     $('#cards').append(cardCol);
@@ -49,7 +50,8 @@ $('#search').on('click', function (event) {
                     email: petRef.contact.email.$t,
                     shelterId: petRef.shelterId.$t,
                     imgSrc: petRef.media.photos.photo[2].$t,
-                    description: petRef.description.$t
+                    description: petRef.description.$t,
+                    id:petRef.id.$t
                 };
                 var cardCol = petCardBuilder(cardBuilder);
                 $('#cards').append(cardCol);

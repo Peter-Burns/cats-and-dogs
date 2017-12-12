@@ -3,6 +3,7 @@ function petCardBuilder(petRef) {
     var card = $('<div class="card teal petCard"></div>');
     card.attr('data-email', petRef.email);
     card.attr('data-shelterId', petRef.shelterId);
+    card.attr('data-id', petRef.id);
     var icon = 'favorite_border';
     if(petRef.key){
         card.attr('data-key', petRef.key);
