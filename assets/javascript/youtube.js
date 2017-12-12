@@ -27,7 +27,32 @@ $('#search').on('click', function (event) {
             }
         });
     }
+    else if(animal){
+        var youtubeUrl = 'https://www.googleapis.com/youtube/v3/search';
+        $('#youtubeSection').empty();
+        $('#youtubeSection').append($('<h1><span>' + animal + '</span></h1>'));
+        $.ajax({
+            url: youtubeUrl,
+            method: 'GET',
+            dataType: 'json',
+            data: {
+                key: 'AIzaSyAhcfF1-dZJMw6lxGpP0igDZ-RkdlRNHdo',
+                videoEmbeddable: true,
+                type: 'video',
+                safeSearch: 'strict',
+                q: animal,
+                order: 'viewCount',
+                maxResults: '6',
+                part: 'snippet'
+            }
+        }).done(function (response) {
+            var videos = response.items;
+            for (var i = 0; i < videos.length; i++) {
+                $('#youtubeSection').append('<div class="col l4 m6 s12"><div class="video-container"><iframe allowfullscreen width="480" height="360" src="https://www.youtube.com/embed/' + videos[i].id.videoId + '"</iframe></div></div>');
+            }
+        });
+    }
     else{
-        alert('You must select a breed to search!');
+        alert('You must select a breed or animal to search!');
     }
 });

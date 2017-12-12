@@ -2,7 +2,7 @@ $('#animal').on('change', function () {
     if ($(this).val()) {
         var queryUrl = 'https://api.petfinder.com/breed.list';
         var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
-        var animal = $(this).val();
+        var animal = $(this).val().toLowerCase();
         $.ajax({
             url: queryUrl,
             method: 'GET',
