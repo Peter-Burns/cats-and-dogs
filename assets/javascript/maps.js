@@ -1,5 +1,5 @@
 $('body').on('click', '.mapLink', function (event) {
-    var shelterId = $(this).parent().parent().parent().parent().attr('data-shelterId');
+    var shelterId = $(this).parent().parent().parent().attr('data-shelterId');
     var queryURL = 'https://api.petfinder.com/shelter.get';
     var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
     $.ajax({

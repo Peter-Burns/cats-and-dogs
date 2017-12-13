@@ -1,5 +1,5 @@
 $('body').on('click', '.facebookLink', function () {
-    var petPic = $(this).parent().parent().parent().parent().children('.card-image').children('img');
+    var petPic = $(this).parent().parent().parent().children('.card-image').children('img');
     var name = petPic.parent().parent().children('.card-content').children('.card-title').text();
     name = name.replace(/[^a-zA-Z ]/g, "").trim();
     name = name.replace(/  /g, ' ');

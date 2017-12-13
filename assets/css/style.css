@@ -12,3 +12,7 @@ h2>span,h1>span{
 footer{
     padding:5px;
 }
+.cardBtn{
+    width: 100%;
+    color:#ffab40;
+}
