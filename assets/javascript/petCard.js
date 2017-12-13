@@ -6,7 +6,8 @@ function petCardBuilder(petRef) {
     card.attr('data-animal', petRef.animal);
     var icon = 'favorite_border';
     if (userRef) {
-        if (userRef.child(petRef.id).exists()) {
+        var ref = userRef.child(petRef.id);
+        if (ref.exists()) {
             icon = 'favorite';
         }
     }
