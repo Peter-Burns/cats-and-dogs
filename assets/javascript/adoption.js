@@ -43,7 +43,7 @@ $('#search').on('click', function (event) {
                         animal: petRef[i].animal.$t
                     };
                     var card = petCardBuilder(cardBuilder);
-                    var cardCol = '#cards' + i%2;
+                    var cardCol = '#cards' + i % 2;
                     $(cardCol).append(card);
                 }
             }
@@ -59,6 +59,19 @@ $('#search').on('click', function (event) {
                 };
                 var card = petCardBuilder(cardBuilder);
                 $('#cards0').append(card);
+            }
+            if (userRef) {
+                userRef.off();
+                userRef.on('child_added', function (snap) {
+                    if($('[data-id="' + snap.key + '"]').children().length){
+                        $('[data-id="' + snap.key + '"]').children('.card-image').children('a').children('i').text('favorite');
+                    }
+                });
+                userRef.on('child_removed', function (snap) {
+                    if($('[data-id="' + snap.key + '"]').children().length){
+                        $('[data-id="' + snap.key + '"]').children('.card-image').children('a').children('i').text('favorite_border');
+                    }
+                });
             }
         });
     }
