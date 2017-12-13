@@ -19,13 +19,12 @@ $('body').on('click', '.favButton', function () {
                 id: id,
                 animal: animal
             });
-            $(this).parent().parent().attr('data-key', id);
         }
         else {
             $(this).children(0).text('favorite_border');
             var name = $(this).parent().parent().children('.card-content').children('.card-title').text();
             Materialize.toast(name + ' removed from favorites :(', 3000);
-            userRef.child($(this).parent().parent().attr('data-key')).remove();
+            userRef.child($(this).parent().parent().attr('data-id')).remove();
         }
     }
     else {

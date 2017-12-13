@@ -5,8 +5,7 @@ function petCardBuilder(petRef) {
     card.attr('data-id', petRef.id);
     card.attr('data-animal', petRef.animal);
     var icon = 'favorite_border';
-    if (petRef.key) {
-        card.attr('data-key', petRef.key);
+    if (userRef.child(petRef.id).exists()) {
         icon = 'favorite';
     }
     var petCard = $('<div class="card-image"></div>');
