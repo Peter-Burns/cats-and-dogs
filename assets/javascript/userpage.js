@@ -1,5 +1,7 @@
 firebase.auth().onAuthStateChanged(function (user) {
-    $('#cards').empty();
+    $('#cards0').empty();
+    $('#cards1').empty();
+    $('#noUser').empty();
     if (user) {
         userRef.on('child_added', function (snap) {
             if (!$('[data-id="' + snap.key + '"]').children().length) {
@@ -22,6 +24,6 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
     }
     else {
-        $('#cards').append('<h3>Must be logged in to see favorites!</h3>');
+        $('#noUser').append('<h3>Must be logged in to see favorites!</h3>');
     }
 });
