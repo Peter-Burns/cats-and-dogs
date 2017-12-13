@@ -7,9 +7,11 @@ function petCardBuilder(petRef) {
     var icon = 'favorite_border';
     if (userRef) {
         var ref = userRef.child(petRef.id);
-        if (ref.exists()) {
-            icon = 'favorite';
-        }
+        ref.once("value").then(function(snapshot){
+            if(snapshot.exists()){
+                icon='favorite';
+            }
+        });
     }
     var petCard = $('<div class="card-image"></div>');
     petCard.append($('<img class = "petPic" src = "' + petRef.imgSrc + '" />'));
