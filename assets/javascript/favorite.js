@@ -16,13 +16,13 @@ $('body').on('click', '.favButton', function () {
                 description: description,
                 shelterId: shelterId,
                 email: email,
-                id:id,
-                animal:animal
-            }); 
+                id: id,
+                animal: animal
+            });
             key = key.toString().split('/').pop();
-            $(this).parent().parent().attr('data-key',key);
+            $(this).parent().parent().attr('data-key', key);
         }
-        else{
+        else {
             $(this).children(0).text('favorite_border');
             var name = $(this).parent().parent().children('.card-content').children('.card-title').text();
             Materialize.toast(name + ' removed from favorites :(', 3000);
@@ -30,6 +30,6 @@ $('body').on('click', '.favButton', function () {
         }
     }
     else {
-        Materialize.toast('have to be logged in to save favorites',3000);
+        Materialize.toast('have to be logged in to save favorites', 3000);
     }
 });

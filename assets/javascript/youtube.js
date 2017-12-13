@@ -27,7 +27,7 @@ $('#search').on('click', function (event) {
             }
         });
     }
-    else if(animal){
+    else if (animal) {
         var youtubeUrl = 'https://www.googleapis.com/youtube/v3/search';
         $('#youtubeSection').empty();
         $('#youtubeSection').append($('<h1><span>' + animal + '</span></h1>'));
@@ -52,7 +52,7 @@ $('#search').on('click', function (event) {
             }
         });
     }
-    else{
-        Materialize.toast('You must select a breed or animal to search!',3000);
+    else {
+        Materialize.toast('You must select a breed or animal to search!', 3000);
     }
 });

@@ -23,7 +23,7 @@ $('#animal').on('change', function () {
             $('#breed').material_select();
         });
     }
-    else{
+    else {
         $('#breed').empty();
         $('#breed').material_select();
     }

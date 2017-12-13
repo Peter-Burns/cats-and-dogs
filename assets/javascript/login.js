@@ -21,7 +21,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
     else {
         localUser = null;
-        if(userRef)userRef.off();
+        if (userRef) userRef.off();
         userRef = null;
         $('#logout').hide();
         $('.userLink').text('User');
