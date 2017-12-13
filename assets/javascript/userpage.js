@@ -14,6 +14,9 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
             }
         });
+        userRef.on('child_removed', function (snap) {
+            $('[data-id="' + snap.key + '"]').children('.card-image').children('a').children('i').text('favorite_border');
+        });
     }
     else {
         $('#cards').append('<h3>Must be logged in to see favorites!</h3>');
