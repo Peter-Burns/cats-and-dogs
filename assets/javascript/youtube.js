@@ -28,6 +28,7 @@ $('#search').on('click', function (event) {
         });
     }
     else if (animal) {
+        animal = animal == 'cat' ? 'Cat' : 'Dog';
         var youtubeUrl = 'https://www.googleapis.com/youtube/v3/search';
         $('#youtubeSection').empty();
         $('#youtubeSection').append($('<h1><span>' + animal + '</span></h1>'));
