@@ -53,6 +53,6 @@ $('#search').on('click', function (event) {
         });
     }
     else{
-        alert('You must select a breed or animal to search!');
+        Materialize.toast('You must select a breed or animal to search!',3000);
     }
 });

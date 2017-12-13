@@ -61,6 +61,6 @@ $('#search').on('click', function (event) {
         });
     }
     else{
-        alert('Invalid Zipcode');
+        Materialize.toast('Invalid Zipcode',3000);
     }
 });
