@@ -30,6 +30,6 @@ $('body').on('click', '.favButton', function () {
         }
     }
     else {
-        alert('have to be logged in to save favorites');
+        Materialize.toast('have to be logged in to save favorites',3000);
     }
 });

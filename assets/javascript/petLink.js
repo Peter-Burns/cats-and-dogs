@@ -27,7 +27,7 @@ $('body').on('click', '.petPic', function () {
         if (win) {
             win.focus();
         } else {
-            alert('Please allow popups to see petfinder profiles');
+            Materialize.toast('Please allow popups to see petfinder profiles',3000);
         }
     });
 });
