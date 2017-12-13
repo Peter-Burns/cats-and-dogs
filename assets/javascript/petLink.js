@@ -20,7 +20,8 @@ $('body').on('click', '.petPic', function () {
     }).done(function (response) {
         var city = response.petfinder.shelter.city.$t.split(' ').join('-');
         var state = response.petfinder.shelter.state.$t;
-        var shelterName = response.petfinder.shelter.name.$t.split(' ').join('-');
+        var shelterName = response.petfinder.shelter.name.$t;
+        shelterName = shelterName.replace(/[^a-zA-Z ]/g, "").trim().split(' ').join('-');
         var link = ('https://www.petfinder.com/' + animal + '/' + name + '-' + id + '/' + state + '/' + city + '/' + shelterName + '-' + shelterId + '/').toLowerCase();
         var win = window.open(link,'_blank');
         if (win) {
