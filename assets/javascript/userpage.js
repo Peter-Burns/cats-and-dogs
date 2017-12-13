@@ -13,6 +13,9 @@ firebase.auth().onAuthStateChanged(function (user) {
                     $('#cards1').append(card);
                 }
             }
+            else{
+                $('[data-id="' + snap.key + '"]').children('.card-image').children('a').children('i').text('favorite');
+            }
         });
         userRef.on('child_removed', function (snap) {
             $('[data-id="' + snap.key + '"]').children('.card-image').children('a').children('i').text('favorite_border');
