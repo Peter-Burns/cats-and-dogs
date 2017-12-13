@@ -1,5 +1,4 @@
 function petCardBuilder(petRef) {
-    var cardCol = $('<div class="col l4 m6">');
     var card = $('<div class="card teal petCard"></div>');
     card.attr('data-email', petRef.email);
     card.attr('data-shelterId', petRef.shelterId);
@@ -16,6 +15,5 @@ function petCardBuilder(petRef) {
     card.append(petCard);
     card.append($('<div class="card-content left-align white-text">' + '<span class="white-text card-title">' + petRef.name + '</span>' + '<p class="desc">' + petRef.description + '</p>' + '</div>'));
     card.append($('<div class="card-action"><a class="mapLink modal-trigger" href="#modal1"><i class="material-icons">location_on</i>Shelter</a><a class="emailLink" href="mailto:' + petRef.email + '"><i class="material-icons">mail</i> Email</a></div>'));
-    cardCol.append(card);
-    return cardCol;
+    return card;
 }

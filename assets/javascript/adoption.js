@@ -2,7 +2,8 @@ $('#search').on('click', function (event) {
     event.preventDefault();
     var regex = /\b\d\d\d\d\d\b/gi;
     if ($('#zipcode').val().match(regex)) {
-        $('#cards').empty();
+        $('#cards0').empty();
+        $('#cards1').empty();
         var apiKey = 'fff64394dcb68ac0d534ca0aa808bd69';
         var queryUrl = 'https://api.petfinder.com/pet.find';
         var location = $('#zipcode').val();
@@ -41,8 +42,9 @@ $('#search').on('click', function (event) {
                         id: petRef[i].id.$t,
                         animal: petRef[i].animal.$t
                     };
-                    var cardCol = petCardBuilder(cardBuilder);
-                    $('#cards').append(cardCol);
+                    var card = petCardBuilder(cardBuilder);
+                    var cardCol = '#cards' + i%2;
+                    $(cardCol).append(card);
                 }
             }
             else {
@@ -55,8 +57,8 @@ $('#search').on('click', function (event) {
                     id: petRef.id.$t,
                     animal: petRef.animal.$t
                 };
-                var cardCol = petCardBuilder(cardBuilder);
-                $('#cards').append(cardCol);
+                var card = petCardBuilder(cardBuilder);
+                $('#cards0').append(card);
             }
         });
     }
