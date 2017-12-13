@@ -1,3 +1,13 @@
+var userFavorites;
+$( document ).ready(function(){
+    if(userRef){
+        userRef.once('value').then(function(snapshot){
+            userFavorites = snapshot.val();
+            console.log(userFavorites);
+        });
+    }
+});
+
 $('#search').on('click', function (event) {
     event.preventDefault();
     var regex = /\b\d\d\d\d\d\b/gi;
