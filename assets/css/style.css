@@ -7,7 +7,7 @@ h2>span,h1>span{
 .desc{
     overflow-y:auto;
     overflow-x:hidden;
-    height:200px;
+    max-height:200px;
 }
 footer{
     padding:5px;
