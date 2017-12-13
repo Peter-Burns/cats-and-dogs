@@ -5,7 +5,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             var cardBuilder = snap.val();
             cardBuilder.key = snap.key;
             var card = petCardBuilder(cardBuilder);
-            if ($('#cards0').children().length < $('#cards1').children().length) {
+            if ($('#cards0').children().length <= $('#cards1').children().length) {
                 $('#cards0').append(card);
             }
             else{
