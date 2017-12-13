@@ -10,7 +10,7 @@ $('body').on('click', '.favButton', function () {
             var email = $(this).parent().parent().attr('data-email');
             var imgSrc = $(this).parent().children('img').attr('src');
             Materialize.toast(name + ' added to favorites!', 3000);
-            var key = userRef.push({
+            userRef.child(id).set({
                 imgSrc: imgSrc,
                 name: name,
                 description: description,
@@ -19,8 +19,7 @@ $('body').on('click', '.favButton', function () {
                 id: id,
                 animal: animal
             });
-            key = key.toString().split('/').pop();
-            $(this).parent().parent().attr('data-key', key);
+            $(this).parent().parent().attr('data-key', id);
         }
         else {
             $(this).children(0).text('favorite_border');
