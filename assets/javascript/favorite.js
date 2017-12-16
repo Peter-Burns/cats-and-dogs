@@ -17,7 +17,8 @@ $('body').on('click', '.favButton', function () {
                 shelterId: shelterId,
                 email: email,
                 id: id,
-                animal: animal
+                animal: animal,
+                dateAdded: firebase.database.ServerValue.TIMESTAMP;
             });
         }
         else {

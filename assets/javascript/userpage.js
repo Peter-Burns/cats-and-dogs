@@ -3,7 +3,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     $('#cards1').empty();
     $('#noUser').empty();
     if (user) {
-        userRef.on('child_added', function (snap) {
+        userRef.orderByChild('dateAdded').on('child_added', function (snap) {
             if (!$('[data-id="' + snap.key + '"]').children().length) {
                 var cardBuilder = snap.val();
                 cardBuilder.key = snap.key;
