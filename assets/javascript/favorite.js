@@ -18,7 +18,7 @@ $('body').on('click', '.favButton', function () {
                 email: email,
                 id: id,
                 animal: animal,
-                dateAdded: firebase.database.ServerValue.TIMESTAMP;
+                dateAdded: firebase.database.ServerValue.TIMESTAMP
             });
         }
         else {
